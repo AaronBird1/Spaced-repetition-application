@@ -1,0 +1,31 @@
+DROP TABLE IF EXISTS Card;
+DROP TABLE IF EXISTS Deck;
+DROP TABLE IF EXISTS User;
+
+CREATE TABLE User (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  username VARCHAR(20) UNIQUE NOT NULL,
+  password VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE Deck (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  name VARCHAR(30) NOT NULL,
+  description VARCHAR(200) NOT NULL,
+  deadline DATETIME,
+  owner INT NOT NULL,
+  FOREIGN KEY (owner) REFERENCES User(id)
+);
+
+CREATE TABLE Card (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  question VARCHAR(200) NOT NULL,
+  answer VARCHAR(100) NOT NULL,
+  revisionDate DATETIME NOT NULL,
+  deckId INT NOT NULL,
+  level INT NOT NULL,
+  numTimesStudied INT,
+  numTimesRemembered INT,
+  daysAdjustment INT,
+  FOREIGN KEY (deckId) REFERENCES Deck(id)
+);

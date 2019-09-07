@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.cell.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<?import javafx.geometry.Insets?>
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.openjfx.spacedrepetition.EditDeckPageController">
+   <children>
+      <Button fx:id="homeButton" layoutX="531.0" layoutY="13.0" onAction="#switchToHome" />
+      <Button fx:id="submitChangesButton" layoutX="528.0" layoutY="125.0" onAction="#submitChanges" text="Submit" />
+      <TextField fx:id="newDeckNameField" layoutX="10.0" layoutY="67.0" prefHeight="27.0" prefWidth="506.0" promptText="New deck name" />
+      <HBox alignment="CENTER" layoutX="10.0" layoutY="130.0" prefHeight="27.0" prefWidth="101.0" />
+      <HBox alignment="CENTER" layoutX="200.0" layoutY="226.0" prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Text fx:id="status" />
+         </children>
+      </HBox>
+      <Button fx:id="backButton" layoutX="14.0" layoutY="14.0" onAction="#switchBack" />
+      <Text layoutX="122.0" layoutY="63.0" text="Edit deck name" />
+      <TableView fx:id="cardsTable" layoutX="39.0" layoutY="172.0" prefHeight="167.0" prefWidth="528.0">
+        <columns>
+          <TableColumn prefWidth="268.0" text="Question">
+            <cellValueFactory>
+		      <PropertyValueFactory property="cardQuestion" />
+		    </cellValueFactory>
+		  </TableColumn>
+          <TableColumn minWidth="0.0" prefWidth="259.0" text="Answer">
+	        <cellValueFactory>
+		      <PropertyValueFactory property="cardAnswer" />
+		    </cellValueFactory>
+		  </TableColumn>
+        </columns>
+      </TableView>
+      <Button layoutX="39.0" layoutY="346.0" mnemonicParsing="false" onAction="#deleteCard" text="Delete Card" />
+      <TextField fx:id="newDeckDescriptionField" layoutX="10.0" layoutY="125.0" prefHeight="27.0" prefWidth="506.0" promptText="New deck description" />
+      <Text layoutX="122.0" layoutY="122.0" text="Edit deck description" />
+   </children>
+</AnchorPane>

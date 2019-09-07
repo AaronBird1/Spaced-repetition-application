@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.openjfx.spacedrepetition.LoginPageController">
+   <children>
+      <TextField fx:id="usernamefield" layoutX="201.0" layoutY="217.0" onAction="#attemptLogin" promptText="Username" />
+      <PasswordField fx:id="passwordfield" layoutX="201.0" layoutY="253.0" onAction="#attemptLogin" promptText="Password" />
+      <Button fx:id="loginButton" layoutX="384.0" layoutY="231.0" mnemonicParsing="false" onAction="#attemptLogin" prefHeight="15.0" prefWidth="52.0" />
+      <Button fx:id="newAccountButton" layoutX="384.0" layoutY="253.0" mnemonicParsing="false" onAction="#submitNewAccountInfo" prefHeight="27.0" prefWidth="112.0" text="Create account" />
+      <Button fx:id="newAccountPageButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#setupCreateAccount" />
+      <Button fx:id="loginPageButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#setupLogin" />
+      <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="184.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@lflogobig2.png" />
+         </image>
+      </ImageView>
+      <Text fx:id="loginStatus" strokeType="OUTSIDE" strokeWidth="0.0" translateX="204.0" translateY="307.0" />
+   </children>
+</AnchorPane>
